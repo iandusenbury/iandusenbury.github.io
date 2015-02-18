@@ -1,0 +1,21 @@
+# Site settings
+title: Ian's Profile Page
+email: your-email@domain.com
+description: > # Front End Developer living in Portland, Oregon.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: dusen_
+github_username:  iandusenbury
+exclude: [
+	.gitignore,
+	CNAME,
+	svgs,
+	scss,
+	package.json,
+	Gruntfile.js,
+	node_modules,
+	README.md
+]
+
+# Build settings
+markdown: kramdown

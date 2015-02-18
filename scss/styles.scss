@@ -1,0 +1,41 @@
+html, body{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.section{
+	height: 100%;
+	background: $site-white;
+}
+
+#top{
+	background: url(../../images/build/tempProfile.jpg) center center fixed no-repeat;
+	background-size: cover;
+	text-align: center;
+
+	h1{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%);
+		transform: translateX(-50%);
+		margin: -50px auto;
+	}
+}
+
+#contact{
+	width: 100%;
+	position: relative;
+	text-align: center;
+	background: #2f2a2f;
+	.content{
+		background: $site-white;
+		position: absolute;
+		margin: -100px auto;
+		height: calc(100% + 100px);
+		width: 80%;
+		left:0;
+		right: 0;
+	}
+}

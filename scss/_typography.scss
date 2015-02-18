@@ -1,0 +1,22 @@
+h1{
+	font-family: 'Nexa';
+	font-weight: 400;
+	font-size: 3.7em;
+	text-transform: uppercase;
+	color: white;
+}
+
+h2{
+	font-family: 'Nexa';
+	font-weight: 300;
+	font-size: 2em;
+	margin: 0;
+	text-transform: uppercase;
+	color: $site-black;
+}
+
+#contact{
+	h2{
+		line-height: 100px;
+	}
+}
