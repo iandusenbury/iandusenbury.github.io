@@ -14,7 +14,8 @@ html, body{
 	bottom: 0;
 	left: 0;
 	right: 0;
-	transform: translateZ(0);
+	transform: translate3d(0,0,0);
+	transform-style: flat;
 }
 
 .section{
@@ -22,11 +23,18 @@ html, body{
 	position: relative;
 	margin-bottom: 1px;
 	padding-bottom: 20px;
+	transform: translate3d(0,0,0);
+	z-index: 1000;
+
 
 	@include container;
 
 	.wrap{
 		margin: 0 50px;
+
+		@include mq(break2){
+			margin: 0 10px;
+		}
 	}
 }
 
@@ -36,6 +44,8 @@ html, body{
 	background: rgba(16,16,16, .3);
 	position: fixed;
 	text-align: center;
+	transform: translate3d(0,0,0);
+	transform-style: flat;
 }
 
 .center-wrapper{
@@ -64,24 +74,27 @@ html, body{
 
 header{
 	height: 60px;
-	line-height: 60px;
+	line-height: 63px;
 	background: $s_white;
 	max-width: 860px;
 	margin: 0 auto;
 	margin-bottom: 1px;
 	position: relative;
+	transform: translate3d(0,0,0);
+	z-index: 1000;
 		
 	a{
 		font-family: 'Nexa';
 		font-size: 1.8em;
 		font-weight: 400;
-		position: absolute;
-		top: 3px;
-		left: 50px;
-		padding: 0;
+		margin-left: 50px;
 		text-transform: uppercase;
 		text-decoration: none;
 		color: $s_blue;
+
+		@include mq(break2){
+			margin-left: 10px;
+		}
 	}
 }
 
@@ -185,6 +198,8 @@ header{
 
 		input, textarea{
 			border: 2px solid rgb(200, 200, 200);
+			border-radius: 0;
+			-webkit-appearance: none;
 		}
 
 		input{
