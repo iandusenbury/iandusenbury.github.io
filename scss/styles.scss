@@ -1,13 +1,20 @@
 html, body{
+	background: $s_white;
 	height: 100%;
 	width: 100%;
 	position: relative;
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
-body{
-	background: url(../../images/build/tempProfile.jpg) bottom center fixed no-repeat;
+.background{
+	background: url(../../images/build/tempProfile.jpg) bottom center no-repeat;
 	background-size: cover;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transform: translateZ(0);
 }
 
 .section{
