@@ -23,25 +23,16 @@
             type: 'POST',
             success: function(response) {
                 $(formMessages).removeClass('error');
-               // $(formMessages).addClass('success');
 
                 // Set the message text.
-               // $(formMessages).text(response);
-                $('#contact .svg-wrap').addClass('show-check');
-                setTimeout(function(){
-                    $('#contact .svg-wrap').removeClass('show-check');
-                }, 1300);
 
                 // Clear the form.
-                $('#clientname').val('');
+                $('#first-name').val('');
+                $('#last-name').val('');
                 $('#email').val('');
-                $('#companyname').val('');
                 $('#description').val('');
             },
             error: function(error) {
-                $(formMessages).removeClass('success');
-                $(formMessages).addClass('error');
-
                 // Set the message text.
                 if (data.responseText !== '') {
                     $(formMessages).text(data.responseText);
@@ -51,4 +42,20 @@
             }
         });
     });
+});
+;var scroll_pos,
+	to_translate = $('#top').height();
+
+function parallax(){
+	if(scroll_pos < to_translate){
+		$('.parallax-content').css({
+			transform: 'translate3d(0,' + scroll_pos/2 + 'px, 0)',
+			opacity: 1.3 - scroll_pos/to_translate,
+		});
+	}
+}
+
+$(window).on('scroll', function(){
+	scroll_pos = window.pageYOffset;
+	requestAnimationFrame(parallax);
 });

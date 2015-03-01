@@ -1,5 +1,8 @@
-@import "_normalize.scss",
+@import "../bower_components/susy/sass/susy",
+		"_susy-settings.scss",
+		"_normalize.scss",
 		"_font_faces.scss",
 		"_variables.scss",
+		"_media-queries.scss",
 		"_typography.scss",
         "styles.scss";

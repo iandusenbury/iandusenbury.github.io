@@ -8,20 +8,31 @@ module.exports = function(grunt) {
         separator: ';',
       },
       dist: {
-        src: ['js/jquery.min.js', 'js/contact.js'],
+        src: ['js/jquery.min.js', 'js/contact.js', 'js/parallax.js'],
         dest: 'js/build/js-concat.js',
       },
     },
+
     uglify: {
       build: {
         src: ['js/build/js-concat.js'], //input
         dest: 'js/build/global.min.js' //output
+      },
+
+      dev_build: {
+        options: {
+          sourceMap: true
+        },
+
+        src: ['js/build/js-concat.js'], //input
+        dest: '_site/js/build/global.min.js' //output
       }
     },
 
     sass: {                                                
         options: {  
-          sourceMap: true,                   
+          require: 'susy',
+          sourceMap: 'none',                   
           outputStyle: 'compressed'
         },
         dist: { 
@@ -29,6 +40,21 @@ module.exports = function(grunt) {
             'scss/global-unprefixed.css': 'scss/global.scss'
           }
         }
+    },
+
+    autoprefixer: {
+      options: {
+        // Task-specific options go here.
+      },
+      single_file: {
+        src: 'scss/global-unprefixed.css',
+        dest: 'css/global.css'
+      },
+
+      site: {
+        src: 'scss/global-unprefixed.css',
+        dest: '_site/css/global.css'
+      },
     },
 
     svgstore: {
@@ -45,23 +71,13 @@ module.exports = function(grunt) {
       }
     },
 
-    autoprefixer: {
-      options: {
-        // Task-specific options go here.
-      },
-      single_file: {
-        src: 'scss/global-unprefixed.css',
-        dest: 'css/global.css'
-      },
-    },
-
     imagemin: {
       dynamic: {
           files: [{
               expand: true,
-              cwd: 'images-pre-min/',
+              cwd: 'images/',
               src: ['*.{png,jpg,gif}'],
-              dest: 'images/'
+              dest: 'images/build'
           }]
       }
     },
@@ -78,7 +94,7 @@ module.exports = function(grunt) {
     browserSync: {
       dev: {
           bsFiles: {
-              src : '_site/css/global.css'
+              src: ['_site/css/global.css', '_site/global.min.js', '_site/index.html']
           },
           options: {
               watchTask: true,
@@ -92,11 +108,6 @@ module.exports = function(grunt) {
         //livereload: true,
       },
 
-      site: {
-        files: ['index.html', '_includes/*', '_layouts/*'],
-        tasks: ['shell:jekyllBuild']
-      },
-
       svg: {
         files: ['svgs/*.svg'],
         tasks: ['svgstore', 'shell:jekyllBuild']
@@ -104,12 +115,12 @@ module.exports = function(grunt) {
 
       css: {
         files: ['scss/*.scss'],
-        tasks: ['sass', 'autoprefixer', 'shell:jekyllBuild']
+        tasks: ['sass', 'autoprefixer:site']
       },
 
       js: {
         files: ['js/*.js'],
-        tasks: ['concat', 'uglify']
+        tasks: ['concat', 'uglify:dev_build']
       },
 
       images: {
@@ -124,6 +135,7 @@ module.exports = function(grunt) {
 
   // Default tasks
   grunt.registerTask('serve', ['shell:jekyllServe']);
-  grunt.registerTask('default', ['concat', 'uglify', 'svgstore', 'sass', 'autoprefixer', 'imagemin',  'shell:jekyllBuild','browserSync',  'watch']);
+  grunt.registerTask('default', ['concat', 'uglify:build', 'svgstore', 'sass', 'autoprefixer:single_file', 'imagemin',  'shell:jekyllBuild']);
+  grunt.registerTask('dev', ['concat', 'uglify:build', 'svgstore', 'sass', 'autoprefixer:single_file', 'imagemin' ,'browserSync',  'watch']);
 
 };

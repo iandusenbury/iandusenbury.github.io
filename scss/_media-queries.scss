@@ -1,0 +1,9 @@
+@mixin mq($point){
+	@if $point == break1{
+		@media only screen and (max-width: 840px){@content;}
+	}
+
+	@if $point == break2{
+		@media only screen and (max-width: 640px){@content;}
+	}
+}

@@ -1,22 +1,76 @@
-<!Doctype HTML>
-<html>
-	<head>
-		<title>Ian Dusenbury</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-		<link rel="stylesheet" href="css/global.css">
-	</head>
-	<body>
+---
+layout: default
+title: Ian Dusenbury
+---
+		<div class="overlay"></div>
 		<div id="top" class="section">
-			<h1>Ian Dusenbury</h1>
-		</div>
-		<div id="about" class="section"></div>
-		<div id="projects" class="section"></div>
-		<div id="contact" class="section">
-			<div class="content">
-				<h2>Contact</h2>
-				<form action="POST"></form>
+			<div class="center-wrapper">
+				<div class="center-content">
+					<div class="parallax-content"><h1>ID</h1></div>
+				</div>
 			</div>
 		</div>
-	</body>
-</html>
+		<header><a href="#top">Ian Dusenbury</a></header>
+		<div id="about" class="section">
+			<div class="wrap">
+				<h1>About Me</h1>
+				<div class="picture">
+					<img src="images/build/self.jpg" alt="">
+				</div>
+				<div class="about-text">
+					<p>Front-end developer living in Portland, Oregon. The things I know are HTML, Sass, Javascript, JQuery, Grunt, Git, along with some knowledge of c++ and python. I am learning new things everyday about these languages and tools. I enjoy building things for the web and episode binging on Netflix.</p>
+				</div>
+			</div>
+		</div>
+		<div id="work" class="section">
+			<div class="wrap">
+				<h1>work</h1>
+				<p>Currently working at float development.</p>
+			</div>
+		</div>
+		<div id="contact" class="section">
+			<div class="wrap">
+				<h1>Contact</h2>
+				<div class="contact-info">
+					<div class="contact-text">
+						<p>Available for meetup in the greater Portland area or anywhere in the world via Facetime or Skype.</p>
+					</div>
+
+					<div class="social">
+						<a href="https://www.facebook.com/ian.dusenbury" target="_blank"><svg><use xlink:href="#icon-facebook"/></svg></a>
+						<a href="https://www.linkedin.com/pub/ian-dusenbury/74/818/1a1" target="_blank"><svg><use xlink:href="#icon-linkedin"/></svg></a>
+						<a href="https://instagram.com/thedusen/" target="_blank"><svg><use xlink:href="#icon-instagram"/></svg></a>
+						<a href="https://github.com/iandusenbury" target="_blank"><svg><use xlink:href="#icon-github"/></svg></a>
+					</div>
+				</div>
+				<div class="form">
+					<form id="ajax-contact" autocomplete="off" action="https://femail.herokuapp.com/send" method="post">
+						<div class = "formline">
+							<label>First Name <span>*</span></label>
+							<input type="text" class='formtext' id ='first-name' name="first-name" required>
+						</div>
+
+						<div class = "formline">
+							<label>Last Name <span>*</span></label>
+							<input type="text" class='formtext' id ='last-name' name="last-name" required>
+						</div>
+
+						<div class = "formline">
+							<label>Email <span>*</span></label>
+							<input type="email" class='formtext' id ='email' name="email" required>
+						</div>
+
+						<div class="formline">
+							<label>Description <span>*</span></label>
+							<textarea class="description" id ='description' name="description" required></textarea>
+						</div>
+
+						<div class="formline submit">
+							<button type="submit" id="serialize">Send</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<footer class="section"><p>Made in PDX / legal / &copy; 2015</p></footer>
+		<script type="text/javascript" src="js/build/global.min.js"></script>
