@@ -67,8 +67,13 @@ html, body{
 
 
 	h1{
+		margin-top: 25px;
 		font-size: 10em;
 		color: $s_white;
+
+		@include mq(break2){
+			margin-top: 0;
+		}
 	}
 }
 

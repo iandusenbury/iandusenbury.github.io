@@ -43,7 +43,13 @@
         });
     });
 });
-;var scroll_pos,
+;var window_width = window.innerWidth;
+
+if(window_width < 860){
+	$('.background').css({height: window.innerHeight + 100 + 'px'});
+}
+
+var scroll_pos,
 	to_translate = $('#top').height();
 
 function parallax(){
