@@ -125,6 +125,17 @@ header{
 		}
 	}
 }
+
+@keyframes sending{
+	from{
+		transform: scale(1, .6);
+	}
+
+	to{
+		transform: scale(1, .8);
+	}
+}
+
 #contact{
 	.contact-info{
 		@include span(6);
@@ -223,16 +234,55 @@ header{
 		}
 
 		button{
+			position: relative;
+			overflow: hidden;
 			height: 40px;
+			line-height: 40px;
 			width: 100%;
 			border: none;
-			background: $s_blue;
+			background: rgba(64, 131, 215, .9);
 			color: $s_white;
 			font-size: 1.2em;
+			outline: none;
 			transition: background .2s ease-in-out;
 
-			&:hover{
-				background: rgba(64, 131, 215, .9);
+			.button-content{
+				position: absolute;
+				width: 200%;
+				top:0;
+				left: -100%;
+				transition: all .5s ease-in-out;
+
+				&:hover{
+					left: 0;
+				}
+			}
+
+			svg{
+				height: 40px;
+				width: 50%;
+				float: left;
+				transition: left .5s ease-in-out;
+				transform: scale(1, .8);
+
+				use{
+					fill: white;
+				}
+			}
+
+			.animate{
+				left:0;
+
+				svg{
+					animation: sending .9s ease-in-out infinite alternate;
+				}
+			}
+
+			p{
+				width: 50%;
+				float: left;
+				color: white;
+				background: rgba(64, 131, 215, 1);
 			}
 		}
 	}

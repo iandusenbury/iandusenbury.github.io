@@ -6,13 +6,11 @@
     // Get the form.
     var form = $('#ajax-contact');
 
-    // Get the messages div.
-    var formMessages = $('#form-messages');
-
     // Event listener for the contact form.
     $(form).submit(function(event) {
         // Stop the browser from submitting the form.
         event.preventDefault();
+        $('.button-content').addClass('animate');
 
         // Serialize the form data.
         var formData = $(form).serialize();
@@ -22,15 +20,13 @@
             data: formData,
             type: 'POST',
             success: function(response) {
-                $(formMessages).removeClass('error');
-
-                // Set the message text.
 
                 // Clear the form.
                 $('#first-name').val('');
                 $('#last-name').val('');
                 $('#email').val('');
                 $('#description').val('');
+                $('.button-content').removeClass('animate');
             },
             error: function(error) {
                 // Set the message text.
