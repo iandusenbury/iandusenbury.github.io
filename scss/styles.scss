@@ -294,7 +294,7 @@ header{
 			.animate{
 				left:0;
 
-				svg{
+				svg:first-child{
 					animation: sending .9s ease-in-out infinite alternate;
 				}
 			}

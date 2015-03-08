@@ -23,10 +23,10 @@ $(function() {
                 $('#email').val('');
                 $('#description').val('');
 
-                $('.button-content').removeClass('animate');
                 $('.svg-wrap').addClass('success');
                 setTimeout(function(){
-                  $('.svg-wrap').removeClass('success');  
+                    $('.button-content').removeClass('animate');
+                    $('.svg-wrap').removeClass('success');  
                 }, 300);
                 
             },
