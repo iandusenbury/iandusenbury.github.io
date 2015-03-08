@@ -24,11 +24,10 @@ $(function() {
                 $('#description').val('');
 
                 $('.svg-wrap').addClass('success');
-                setTimeout(function(){
+                $('button').mouseleave(function(){
                     $('.button-content').removeClass('animate');
                     $('.svg-wrap').removeClass('success');  
-                }, 300);
-                
+                });
             },
             error: function(error) {
                 // Set the message text.

@@ -27,12 +27,11 @@
                 $('#email').val('');
                 $('#description').val('');
 
-                $('.button-content').removeClass('animate');
                 $('.svg-wrap').addClass('success');
-                setTimeout(function(){
-                  $('.svg-wrap').removeClass('success');  
-                }, 300);
-                
+                $('button').mouseleave(function(){
+                    $('.button-content').removeClass('animate');
+                    $('.svg-wrap').removeClass('success');  
+                });
             },
             error: function(error) {
                 // Set the message text.
