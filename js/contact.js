@@ -22,7 +22,13 @@ $(function() {
                 $('#last-name').val('');
                 $('#email').val('');
                 $('#description').val('');
+
                 $('.button-content').removeClass('animate');
+                $('.svg-wrap').addClass('success');
+                setTimeout(function(){
+                  $('.svg-wrap').removeClass('success');  
+                }, 300);
+                
             },
             error: function(error) {
                 // Set the message text.

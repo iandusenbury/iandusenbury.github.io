@@ -257,13 +257,34 @@ header{
 					left: 0;
 				}
 			}
+			
+			.svg-wrap{
+				height: 80px;
+				position:relative;
+				left:0;
+				transition: all .2s ease-in-out;
+			}
+
+			.success{
+				transform: translate3d(0, -40px, 0);
+			}
 
 			svg{
 				height: 40px;
 				width: 50%;
-				float: left;
+				left:0;
+				position: absolute;
 				transition: left .5s ease-in-out;
-				transform: scale(1, .8);
+				
+				&:first-child{
+					transform: scale(1, .8);
+				}
+
+				&:last-child{
+					height: 35px;
+					padding-top: 5px;
+					top: 40px;
+				}
 
 				use{
 					fill: white;
@@ -279,8 +300,10 @@ header{
 			}
 
 			p{
+				position: absolute;
+				right: 0;
+				top:0;
 				width: 50%;
-				float: left;
 				color: white;
 				background: rgba(64, 131, 215, 1);
 			}
