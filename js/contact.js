@@ -26,7 +26,9 @@ $(function() {
                 $('.svg-wrap').addClass('success');
                 $('button').mouseleave(function(){
                     $('.button-content').removeClass('animate');
-                    $('.svg-wrap').removeClass('success');  
+                    setTimeout(function(){
+                        $('.svg-wrap').removeClass('success');  
+                    }, 200);
                 });
             },
             error: function(error) {
