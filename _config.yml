@@ -1,21 +1,32 @@
-# Site settings
-title: Ian's Profile Page
-email: your-email@domain.com
-description: > # Front End Developer living in Portland, Oregon.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: dusen_
-github_username:  iandusenbury
-exclude: [
-	.gitignore,
-	CNAME,
-	svgs,
-	scss,
-	package.json,
-	Gruntfile.js,
-	node_modules,
-	README.md
-]
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
 
-# Build settings
-markdown: kramdown
+# Permalinks
+permalink:        pretty
+
+# Server
+source:           docs
+destination:      _gh_pages
+host:             0.0.0.0
+port:             9001
+url:              http://getbootstrap.com
+encoding:         UTF-8
+
+# Custom vars
+current_version:  3.3.5
+repo:             https://github.com/twbs/bootstrap
+sass_repo:        https://github.com/twbs/bootstrap-sass
+
+download:
+  source:         https://github.com/twbs/bootstrap/archive/v3.3.5.zip
+  dist:           https://github.com/twbs/bootstrap/releases/download/v3.3.5/bootstrap-3.3.5-dist.zip
+  sass:           https://github.com/twbs/bootstrap-sass/archive/v3.3.5.tar.gz
+
+blog:             http://blog.getbootstrap.com
+expo:             http://expo.getbootstrap.com
+
+cdn:
+  css:            https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css
+  css_theme:      https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css
+  js:             https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js
