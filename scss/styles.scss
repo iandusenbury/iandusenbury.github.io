@@ -1,24 +1,12 @@
-html, body{
+html, body {
 	background: $s_white;
 	width: 100%;
 	position: relative;
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
-.background{
-	background: url(../../images/build/tempProfile.jpg) bottom center no-repeat;
-	background-size: cover;
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	transform: translate3d(0,0,0);
-	transform-style: flat;
-}
-
-.section{
-	background: $s_white;
+.section {
+	background: white;
 	position: relative;
 	margin-bottom: 1px;
 	padding-bottom: 20px;
@@ -28,66 +16,55 @@ html, body{
 
 	@include container;
 
-	.wrap{
+	.wrap {
 		margin: 0 50px;
 
-		@include mq(break2){
+		@include mq(break2) {
 			margin: 0 10px;
 		}
 	}
 }
 
-.overlay{
-	width: 100%;
-	height: 100%;
-	background: rgba(16,16,16, .3);
-	position: fixed;
-	text-align: center;
-	transform: translate3d(0,0,0);
-	transform-style: flat;
-}
-
-.center-wrapper{
+.center-wrapper {
 	width: 100%;
 	height: 100%;
 	display: table;
 
-	.center-content{
+	.center-content {
 		display: table-cell;
 		vertical-align: middle;
 	}
 }
 
-#top{
+#top {
 	text-align: center;
 	background: none;
 	max-width: 100%;
 	height: 40%;
 
-
-	h1{
+	h1 {
 		margin-top: 25px;
 		font-size: 10em;
-		color: $s_white;
+		color: white;
 
-		@include mq(break2){
+		@include mq(break2) {
 			margin-top: 0;
 		}
 	}
 }
 
-header{
+header {
 	height: 60px;
 	line-height: 63px;
-	background: $s_white;
+	background: white;
 	max-width: 860px;
 	margin: 0 auto;
 	margin-bottom: 1px;
 	position: relative;
 	transform: translate3d(0,0,0);
 	z-index: 1000;
-		
-	a{
+
+	a {
 		font-family: 'Nexa';
 		font-size: 1.8em;
 		font-weight: 400;
@@ -96,68 +73,68 @@ header{
 		text-decoration: none;
 		color: $s_blue;
 
-		@include mq(break2){
+		@include mq(break2) {
 			margin-left: 10px;
 		}
 	}
 }
 
-#about{
-	.picture{
+#about {
+	.picture {
 		@include span(5);
 
-		@include mq(break2){
+		@include mq(break2) {
 			@include span(12);
 		}
 
-		img{
+		img {
 			width: 100%;
 		}
 	}
 
-	.about-text{
+	.about-text {
 		@include span(7 last);
 
-		@include mq(break2){
+		@include mq(break2) {
 			padding-top: 20px;
 			@include span(12);
 		}
 	}
 }
 
-@keyframes sending{
-	from{
+@keyframes sending {
+	from {
 		transform: scale(1, .6);
 	}
 
-	to{
+	to {
 		transform: scale(1, .8);
 	}
 }
 
-#contact{
-	.contact-info{
+#contact {
+	.contact-info {
 		@include span(6);
 		text-align: center;
 
-		@include mq(break1){
+		@include mq(break1) {
 			@include span(12);
 		}
 
-		.contact-text{
+		.contact-text {
 			height: 400px;
 			text-align: left;
 			margin-right: 20px;
 
-			@include mq(break1){
+			@include mq(break1) {
 				height: auto;
 				padding-bottom: 20px;
 				margin-right: 0;
 			}
 		}
 
-		.social{
-			@include mq(break1){
+		.social {
+			@include mq(break1) {
 				position: absolute;
 				bottom: 10px;
 				left:0;
@@ -165,140 +142,140 @@ header{
 			}
 		}
 
-		svg{
+		svg {
 			padding: 0;
 			margin: 0 10px;
 			height: 40px;
 			width: 40px;
 
-			&:hover{
-				use{
+			&:hover {
+				use {
 					fill: $s_blue;
 				}
 			}
 
-			&:last-child{
+			&:last-child {
 				width: 50px;
 			}
 
-			use{
+			use {
 			 	fill: $s_black;
 			 	transition: fill .2s ease-in-out;
 			}
 		}
-		
+
 	}
 
-	.form{
+	.form {
 		@include span(6 last);
 
-		@include mq(break1){
+		@include mq(break1) {
 			@include span(12);
 			padding-bottom: 50px;
 		}
 	}
 
-	.formline{
+	.formline {
 		margin-bottom: 20px;
 
-		label{
+		label {
 			font-size: 1.2em;
 			color: $s_black;
 			display: block;
 
-			span{
+			span {
 				color: #F0534B;
 			}
 		}
 
-		input, textarea{
+		input, textarea {
 			border: 2px solid rgb(200, 200, 200);
 			border-radius: 0;
 			-webkit-appearance: none;
 		}
 
-		input{
+		input {
 			height: 40px;
 			width: 70%;
 
-			@include mq(break2){
+			@include mq(break2) {
 				width: 100%;
 			}
 		}
 
-		textarea{
+		textarea {
 			width: 100%;
 			height: 100px;
 			resize: none;
 		}
 
-		button{
+		button {
 			position: relative;
 			overflow: hidden;
 			height: 40px;
 			line-height: 40px;
 			width: 100%;
 			border: none;
-			background: rgba(64, 131, 215, .9);
+			background: lighten($s_blue, 5%);
 			color: $s_white;
 			font-size: 1.2em;
 			outline: none;
 			transition: background .2s ease-in-out;
 
-			.button-content{
+			.button-content {
 				position: absolute;
 				width: 200%;
 				top:0;
 				left: -100%;
 				transition: all .5s ease-in-out;
 
-				&:hover{
+				&:hover {
 					left: 0;
 				}
 			}
-			
-			.svg-wrap{
+
+			.svg-wrap {
 				height: 80px;
 				position:relative;
 				left:0;
 				transition: all .2s ease-in-out;
 			}
 
-			.success{
+			.success {
 				transform: translate3d(0, -40px, 0);
 			}
 
-			svg{
+			svg {
 				height: 40px;
 				width: 50%;
 				left:0;
 				position: absolute;
 				transition: left .5s ease-in-out;
-				
-				&:first-child{
+
+				&:first-child {
 					transform: scale(1, .8);
 				}
 
-				&:last-child{
+				&:last-child {
 					height: 30px;
 					margin-top: 5px;
 					top: 40px;
 				}
 
-				use{
+				use {
 					fill: white;
 				}
 			}
 
-			.animate{
+			.animate {
 				left:0;
 
-				svg:first-child{
+				svg:first-child {
 					animation: sending .9s ease-in-out infinite alternate;
 				}
 			}
 
-			p{
+			p {
 				position: absolute;
 				right: 0;
 				top:0;
@@ -310,11 +287,11 @@ header{
 	}
 }
 
-footer.section{
+footer.section {
 	padding: 0;
 	margin-bottom: 100px;
 
-	@include mq(break1){
+	@include mq(break1) {
 		margin-bottom: 0;
 	}
 }
