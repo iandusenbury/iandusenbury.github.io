@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ian Dusenbury</title>
+  <script src="js/handlebars.runtime.js"></script>
+  <script src="js/templates.js"></script>
+</head>
+<body>
+  <div id="page_wrap" class="page-wrap"></div>
+  <script>
+    // This will render the template defined by Site.hbs and the partial it uses
+    var data = {
+	    "active": { "active_home": true}
+    };
+
+    document.querySelector('#page_wrap').innerHTML = MySite.templates.Site(data);
+  </script>
+</body>
+</html>
